@@ -1,0 +1,12 @@
+---
+- name: Using Docker pull image
+  service:
+    name: docker
+    state: started
+    enabled: yes
+
+- name: Docker image running
+  docker_image:
+    name: "{{ image }}"
+    source: pull
+  register: img
